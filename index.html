@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #ffffff;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 3em;
+            color: #a58acf;
+            margin: 15px 0;
+        }
+
+        .btn-group {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        button {
+            position: absolute;
+            width: 150px;
+            height: inherit;
+            color: white;
+            font-size: 1.2em;
+            border-radius: 30px;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 0 2px 4px gray;
+            border: 2px solid #a58acf;
+            font-size: 1.2em;
+        }
+
+        button:nth-child(1) {
+            margin-left: -200px;
+            background: #a58acf;
+        }
+
+        button:nth-child(2) {
+            margin-right: -200px;
+            background: white;
+            color: #a58acf;
+        }
+
+        .gif {
+            display: block;
+            margin: 0 auto;
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2 class="question">Do you love me?</h2>
+        <img class="gif" alt="gif" src="https://media0.giphy.com/media/t8Lo2mPAzOcmVTgtGe/giphy.gif?cid=6c09b952231uyrnduhdsf4wqnxz03rv9wx3ni5sm0zolrxz3&ep=v1_stickers_related&rid=giphy.gif&ct=s"/>
+        <div class="btn-group">
+            <button class="yes-btn">Yes</button>
+            <button class="no-btn">No</button>
+        </div>
+    </div>
+    <script>
+        const yesBtn = document.querySelector('.yes-btn');
+        const noBtn = document.querySelector('.no-btn');
+
+        noBtn.addEventListener('mouseover', () => {
+            const i = Math.floor(Math.random() * window.innerWidth);
+            const j = Math.floor(Math.random() * window.innerHeight);
+            noBtn.style.left = i + 'px';
+            noBtn.style.top = j + 'px';
+        });
+
+        yesBtn.addEventListener('click', () => {
+            window.location.href = 'A.html';
+        });
+
+        noBtn.addEventListener('click', () => {
+            alert('Oh no! 😢');
+        });
+    </script>
+</body>
+</html>
